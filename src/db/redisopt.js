@@ -49,7 +49,7 @@ async function update_score(guid, score) {
 
     let rank = await redis.zrevrank('max_rank', guid);
 
-    return {'rank': rank + 1, 'score': prevScore };
+    return {'rank': rank + 1, 'score': parseInt(prevScore) };
 }
 
 
