@@ -7,7 +7,7 @@ const ScoreSchema = require('../models/schema_score')
 const UserSchema = require('../models/schema_user');
 const NicknameSchema = require('../models/schema_nickname');
 
-
+/*
 // 设置默认 mongoose 连接
 const mongoDB = 'mongodb://127.0.0.1/skyfox_astromouse';
 mongoose.set('useCreateIndex', true) 
@@ -22,7 +22,7 @@ db.on('error', console.error.bind(console, 'MongoDB 连接错误：'));
 db.on('open', function() {
     console.log('数据库打开成功');
 } );
-
+*/
 
 function insert_nickname(name) {
     NicknameSchema.create({name: name, inuse: false}, function(err, instance){
