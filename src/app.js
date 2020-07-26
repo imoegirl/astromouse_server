@@ -62,6 +62,7 @@ function handle_get_nickname(req, res) {
     }
 
     let resp = {'code': code, 'nickname': result};
+    console.log('分配昵称: ', result);
     
     res.send(JSON.stringify(resp));
   });
@@ -72,6 +73,7 @@ function handle_get_rank(req, res) {
   // console.log('get rank guid: ', guid);
   redisopt.get_rank_and_max_score(guid).then((result) => {
     // console.log(result);
+    console.log(guid, ' 获取排名: ', result);
     res.send(JSON.stringify(result));
   });
 }
@@ -83,7 +85,7 @@ function handle_update_score(req, res) {
   // console.log('update score: ', guid, score);
   
   redisopt.update_score(guid, score).then((result) => {
-    console.log(result);
+    console.log(guid, ' 更新分数: ', score, ' Result:', result);
     res.send(JSON.stringify(result));
   });
 }
