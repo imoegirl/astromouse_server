@@ -15,7 +15,7 @@ const { json } = require('body-parser');
 
 function push_nicknames_to_redis(){
   let data = fs.readFileSync('./nickname.txt').toString();
-  let names = data.split('\r\n');
+  let names = data.split('\n');
   if (names[names.length - 1] == '') {
     names.pop();
   }
